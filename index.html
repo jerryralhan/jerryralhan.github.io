@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jerry Ralhan - AI mentoring and automation, Sydney</title>
+<meta name="description" content="I help professionals and small businesses get real work done with AI. 1:1 mentoring if you want to learn it yourself. Automation if you'd rather hand it over.">
+<link rel="canonical" href="https://jerryralhan.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jerryralhan.com/">
+<meta property="og:site_name" content="Jerry Ralhan">
+<meta property="og:title" content="Jerry Ralhan - AI mentoring and automation, Sydney">
+<meta property="og:description" content="I help professionals and small businesses get real work done with AI. 1:1 mentoring if you want to learn it yourself. Automation if you'd rather hand it over.">
+<meta property="og:image" content="https://jerryralhan.com/assets/jerry.png">
+<meta property="og:image:alt" content="Jerry Ralhan">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="assets/jerry-ralhan-badge.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --page:#FFFFFF; --ink:#1A1614; --soft:#5F5853; --bright:#FB5607; --deep:#BF4904;
+  --tint:#FFF0E6; --lines:#F7E2D6; --pop:#FFBE0B; --core:#FFD4B8;
+  --sans:"Lexend",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+  --wrap:1200px; --ease:cubic-bezier(.2,.7,.1,1);
+  --shadow:0 1px 2px rgba(26,22,20,.04),0 12px 32px -12px rgba(26,22,20,.14);
+  --shadow-lg:0 2px 4px rgba(26,22,20,.04),0 30px 60px -20px rgba(26,22,20,.22);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:1.0625rem;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--deep);text-underline-offset:.18em}
+::selection{background:var(--tint);color:var(--ink)}
+:focus-visible{outline:3px solid var(--deep);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-weight:700;line-height:1.15;margin:0;color:var(--ink)}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;background:var(--deep);color:#fff;padding:10px 16px;border-radius:8px;z-index:100;text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.top.scrolled{border-bottom-color:var(--lines)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
+.brand{display:block;padding:8px 0;border-radius:4px}
+.brand img{height:22px;width:auto}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a.link{color:var(--ink);text-decoration:none;font-size:.9375rem;font-weight:500;position:relative;padding:6px 0}
+.nav a.link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:var(--deep);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.nav a.link:hover::after{transform:scaleX(1);transform-origin:left}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:600;font-size:1rem;line-height:1;padding:17px 24px;border-radius:999px;text-decoration:none;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background-color .25s,color .25s,border-color .25s;will-change:transform}
+.btn svg{width:16px;height:16px;transition:transform .35s var(--ease)}
+.btn-primary{background:var(--deep);color:#fff;box-shadow:0 8px 20px -10px rgba(191,73,4,.7)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(191,73,4,.75)}
+.btn-primary:hover svg{transform:translate(3px,-3px)}
+.btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--lines)}
+.btn-ghost:hover{background:var(--tint);border-color:var(--core);transform:translateY(-2px)}
+.btn-sm{padding:12px 18px;font-size:.9375rem}
+.btn:active{transform:translateY(0) scale(.98)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.08fr 1fr;gap:72px;align-items:center}
+.eyebrow{font-family:var(--mono);font-size:.8125rem;color:var(--deep);letter-spacing:.02em;margin-bottom:26px}
+.hero h1{font-size:clamp(2.3rem,4.3vw,3.7rem);letter-spacing:-.025em;line-height:1.08;margin-bottom:26px}
+.hero h1 .wd{display:inline-block}
+.js .hero h1 .wd{opacity:0;transform:translateY(.45em);filter:blur(6px);transition:opacity .8s var(--ease),transform .8s var(--ease),filter .8s var(--ease)}
+.js .hero h1.go .wd{opacity:1;transform:none;filter:none}
+.hl{background:linear-gradient(var(--pop),var(--pop)) no-repeat 0 88%/100% 34%;color:inherit;padding:0 .04em;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size 1s var(--ease) 1.1s}
+.js .hl{background-size:0% 34%}
+.js .hero h1.go .hl{background-size:100% 34%}
+.sub{font-size:clamp(1.0625rem,1.4vw,1.25rem);color:var(--soft);max-width:34ch;margin-bottom:36px;line-height:1.5}
+.js .hero .fade{opacity:0;transform:translateY(14px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .hero.go .fade{opacity:1;transform:none}
+.hero.go .f1{transition-delay:.55s}.hero.go .f2{transition-delay:.7s}.hero.go .f3{transition-delay:.85s}
+
+/* the live prompt window */
+.stage{position:relative}
+.stage::before{content:"";position:absolute;inset:26px -18px -22px 30px;background:var(--tint);border-radius:26px;transform:rotate(2.2deg);z-index:0}
+.window{position:relative;z-index:1;background:#fff;border:1px solid var(--lines);border-radius:22px;box-shadow:var(--shadow-lg);padding:26px 28px 22px;overflow:hidden}
+.win-bar{display:flex;align-items:center;gap:7px;margin:0 0 18px 2px}
+.win-bar span{width:10px;height:10px;border-radius:50%;background:var(--lines)}
+.convo{display:grid}
+.convo > .ex{grid-area:1/1}
+.ex.ghost{visibility:hidden}
+.pbox{position:relative;background:var(--tint);border-left:3px solid var(--bright);border-radius:0 12px 12px 0;padding:20px 68px 20px 20px;font-family:var(--mono);font-size:1rem;line-height:1.3;color:var(--ink);min-height:62px}
+.pbox .q{white-space:pre-wrap;word-break:break-word}
+.caret{display:inline-block;width:.55em;height:1.15em;background:var(--ink);vertical-align:-.2em;margin-left:1px;animation:blink 1s steps(1) infinite}
+.caret.off{display:none}
+@keyframes blink{50%{opacity:0}}
+.send{position:absolute;right:12px;top:50%;width:36px;height:36px;margin-top:-18px;border-radius:50%;background:#fff;border:1px solid var(--lines);display:grid;place-items:center;transition:background-color .25s,border-color .25s,transform .3s var(--ease)}
+.send svg{width:16px;height:16px;stroke:var(--soft);transition:stroke .25s}
+.send.ready{background:var(--deep);border-color:var(--deep)}
+.send.ready svg{stroke:#fff}
+.send.fire{transform:scale(.86)}
+.reply{display:grid;grid-template-columns:40px 1fr;gap:16px;margin-top:26px;align-items:start}
+.avatar{width:40px;height:40px;border-radius:50%;background:var(--tint);overflow:hidden;border:1px solid var(--lines)}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;transform:scale(1.25);transform-origin:50% 20%}
+.answer{font-size:1.0625rem;line-height:1.55;color:var(--ink);padding-top:8px;min-width:0}
+.answer p + p{margin-top:10px}
+.answer ol{margin:0;padding:0;list-style:none;counter-reset:s}
+.answer li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:4px}
+.answer li + li{margin-top:10px}
+.answer li::before{content:"0" counter(s);font-family:var(--mono);font-size:.8125rem;color:var(--deep);padding-top:3px}
+.answer b{font-weight:600}
+.answer ul{margin:0;padding:0;list-style:none}
+.answer ul li{display:grid;grid-template-columns:20px 1fr}
+.answer ul li + li{margin-top:8px}
+.answer ul li::before{content:"";width:7px;height:7px;margin-top:.6em;border-radius:50%;background:var(--deep)}
+.answer .rating{display:flex;align-items:center;gap:10px;font-weight:600}
+.answer .sig{color:var(--soft);font-size:.9375rem}
+.stars{display:inline-flex;gap:2px}
+.stars svg{width:16px;height:16px;fill:var(--pop)}
+.w{opacity:0;filter:blur(4px);transition:opacity .35s ease,filter .35s ease}
+.w.on{opacity:1;filter:none}
+.dots{display:none;gap:5px;padding-top:16px}
+.dots.on{display:flex}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--core);animation:dot 1s infinite ease-in-out}
+.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,80%,100%{transform:translateY(0);opacity:.5}40%{transform:translateY(-5px);opacity:1}}
+.live .reply{transition:opacity .35s ease}
+.live .reply.hide{opacity:0}
+.live .reply.pre{visibility:hidden}
+.progress{display:flex;gap:6px;margin-top:20px}
+.progress i{flex:1;height:3px;border-radius:3px;background:var(--lines);position:relative;overflow:hidden}
+.progress i::after{content:"";position:absolute;inset:0;background:var(--deep);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
+.progress i.on::after{transform:scaleX(1)}
+.js .stage{opacity:0;transform:translateY(24px) scale(.98);transition:opacity 1s var(--ease) .35s,transform 1.1s var(--ease) .35s}
+.js .hero.go .stage{opacity:1;transform:none}
+
+/* ---------- reviews: cards sliding sideways ---------- */
+.reviews{padding:48px 0 0}
+.marquee{overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.track{display:flex;gap:20px;width:max-content;padding:8px 0 12px;animation:slide 110s linear infinite}
+.marquee:hover .track,.marquee:focus-within .track{animation-play-state:paused}
+.marquee:focus-visible{outline-offset:-3px}
+@keyframes slide{to{transform:translateX(calc(-50% - 10px))}}
+.track .quote{flex:0 0 auto;width:min(340px,78vw);margin:0;display:flex;flex-direction:column}
+.track .quote blockquote{flex:1}
+.reviews-foot{display:flex;align-items:center;gap:10px;margin-top:18px;font-size:.9375rem}
+
+/* ---------- sections ---------- */
+section.block{padding:120px 0 0}
+.h2{font-size:clamp(2rem,3.6vw,3rem);letter-spacing:-.02em;margin-bottom:56px;max-width:20ch}
+.kicker{font-family:var(--mono);font-size:.8125rem;color:var(--deep);margin-bottom:16px;display:block}
+
+/* offers */
+.offers{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.offer{position:relative;background:#fff;border:1px solid var(--lines);border-radius:22px;padding:40px 40px 36px;display:flex;flex-direction:column;transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .4s}
+.offer:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--core)}
+.offer .label{font-size:.875rem;font-weight:700;color:var(--deep);margin-bottom:10px}
+.offer .name{font-size:.875rem;font-weight:500;color:var(--soft);text-transform:uppercase;letter-spacing:.12em;margin-bottom:22px;display:flex;align-items:center;justify-content:space-between}
+.offer h3{font-size:clamp(1.5rem,2.2vw,1.875rem);letter-spacing:-.015em;margin-bottom:18px;max-width:18ch}
+.offer .lead{color:var(--soft);margin-bottom:8px}
+.offer ul{list-style:none;padding:0;margin:18px 0 34px;border-top:1px solid var(--lines)}
+.offer li{display:grid;grid-template-columns:26px 1fr;padding:14px 0;border-bottom:1px solid var(--lines);line-height:1.45}
+.offer li::before{content:"";width:9px;height:9px;margin-top:.45em;border:2px solid var(--deep);border-radius:50%}
+.offer .btn{margin-top:auto;align-self:flex-start}
+.offer-num{font-family:var(--mono);font-size:.8125rem;color:var(--soft);letter-spacing:0;text-transform:none}
+
+/* steps: a looping path that draws as you scroll (from B2 Loops) */
+.steps-box{position:relative}
+.steps-box svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
+.steps-box .path-base{fill:none;stroke:var(--lines);stroke-width:2}
+.steps-box .path-draw{fill:none;stroke:var(--bright);stroke-width:3.5;stroke-linecap:round}
+.steps{position:relative;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,64px);padding-top:130px}
+.step{position:relative;z-index:1}
+.node{position:relative;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:#fff;border:2px solid var(--lines);font-size:22px;font-weight:700;color:var(--ink);margin-bottom:28px;transition:background-color .5s,border-color .5s,color .5s,transform .6s var(--ease)}
+.step.on .node{background:var(--deep);border-color:var(--deep);color:#fff;transform:scale(1.06)}
+.step h3{font-size:clamp(1.35rem,1.1rem + .6vw,1.6rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin:0 0 10px}
+.step p{color:var(--soft);max-width:22em}
+
+/* testimonials */
+.quote{background:#fff;border:1px solid var(--lines);border-radius:18px;padding:28px 28px 24px;margin:0 0 24px;transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .3s}
+.quote:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--core)}
+.quote blockquote{margin:0 0 20px;font-size:1rem;line-height:1.6;font-weight:400}
+.quote figcaption{display:flex;align-items:center;gap:10px;font-size:.9375rem;padding-top:16px;border-top:1px solid var(--lines)}
+.quote figcaption b{font-weight:600}
+.quote figcaption span{color:var(--soft)}
+.ini{width:30px;height:30px;border-radius:50%;background:var(--tint);display:grid;place-items:center;font-family:var(--mono);font-size:.8125rem;color:var(--ink);flex:none}
+
+/* about */
+.about{display:grid;grid-template-columns:.85fr 1fr;gap:80px;align-items:center}
+.portrait{position:relative;aspect-ratio:1/1;max-width:440px;width:100%}
+.portrait .disc{position:absolute;inset:8% 4% 0 4%;border-radius:50%;background:var(--tint)}
+.portrait .ring{position:absolute;inset:8% 4% 0 4%;border-radius:50%;border:1px solid var(--core);transform:translate(14px,-10px);transition:transform .8s var(--ease)}
+.portrait:hover .ring{transform:translate(-8px,6px)}
+.portrait img{position:relative;width:100%;height:auto;border-radius:0 0 50% 50% / 0 0 46% 46%;clip-path:inset(0 0 0 0 round 0 0 220px 220px)}
+.about .h2{margin-bottom:28px}
+.about p{font-size:1.125rem;line-height:1.65;max-width:52ch}
+.about p + p{margin-top:18px}
+
+/* final call */
+.final{margin:120px auto 0;position:relative;background:var(--tint);border-left:3px solid var(--bright);border-radius:0 28px 28px 0;padding:80px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end;overflow:hidden}
+.final h2{font-size:clamp(2.2rem,4.4vw,3.6rem);letter-spacing:-.025em;margin-bottom:16px}
+.final p{font-size:1.1875rem;color:var(--ink)}
+.final .btns{justify-content:flex-end}
+
+/* footer */
+footer{margin-top:96px;border-top:1px solid var(--lines)}
+footer .wrap{padding-top:28px;padding-bottom:40px;font-size:.875rem;color:var(--soft);line-height:1.8}
+footer .sep{margin:0 .5em}
+footer .fi{white-space:nowrap}
+footer .wrap{display:flex;flex-wrap:wrap;align-items:baseline}
+
+/* reveals */
+.js [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.js [data-reveal].in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:1040px){
+  .hero .wrap{grid-template-columns:1fr;gap:48px}
+  .sub{max-width:44ch}
+  .about{gap:48px}
+  .final{grid-template-columns:1fr;padding:64px 44px}
+  .final .btns{justify-content:flex-start}
+}
+@media (max-width:860px){
+  .nav a.link{display:none}
+  .offers{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr;padding-top:0;gap:48px;padding-left:96px}
+  .node{position:absolute;left:-96px;top:-8px;margin:0}
+  .about{grid-template-columns:1fr}
+  .portrait{max-width:320px}
+}
+@media (max-width:600px){
+  body{font-size:1rem}
+  .wrap{padding:0 20px}
+  .top .wrap{height:64px}
+  .brand img{height:19px}
+  .top .btn-sm{padding:11px 14px;font-size:.875rem}
+  .hero{padding:40px 0 56px}
+  .eyebrow{margin-bottom:18px;font-size:.75rem}
+  .hero h1{margin-bottom:20px}
+  .sub{margin-bottom:28px}
+  .btns .btn{flex:1 1 auto;justify-content:center}
+  .window{padding:16px 14px 14px;border-radius:18px}
+  .stage::before{inset:20px -8px -14px 16px}
+  .pbox{font-size:.875rem;padding:14px 56px 14px 14px}
+  .send{width:32px;height:32px;margin-top:-16px;right:10px}
+  .reply{grid-template-columns:32px 1fr;gap:12px}
+  .avatar{width:32px;height:32px}
+  .answer{font-size:.9375rem;padding-top:5px}
+  section.block{padding-top:88px}
+  .h2{margin-bottom:36px}
+  .offer{padding:30px 24px 28px}
+  .steps{padding-left:84px}
+  .node{left:-84px;width:56px;height:56px;font-size:19px}
+  .quote{padding:24px 22px 20px}
+  .final{margin-top:88px;padding:48px 26px;border-radius:0 22px 22px 0}
+  footer{margin-top:72px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js [data-reveal],.js .hero .fade,.js .stage,.js .hero h1 .wd{opacity:1!important;transform:none!important;filter:none!important}
+  .hl{background-size:100% 34%!important}
+  .w{opacity:1;filter:none}
+  .marquee{-webkit-mask:none;mask:none;overflow-x:auto}
+  .track{padding-left:24px}
+  .track [aria-hidden="true"].quote{display:none}
+}
+</style>
+<script>document.documentElement.className='js';</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/jerry-ralhan-wordmark.svg" alt="Jerry Ralhan" width="147" height="22"></a>
+    <nav class="nav" aria-label="Main">
+      <a class="link" href="#services">Services I offer</a>
+      <a class="link" href="#how">How it works</a>
+      <a class="link" href="#testimonials">Testimonials</a>
+      <a class="btn btn-primary btn-sm" href="https://calendar.app.google/dsVD6WTYH7Evp2jt5" target="_blank" rel="noopener">Book a free intro call<span class="sr-only"> (opens in a new tab)</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <!-- 1. Hero -->
+  <section class="hero" id="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow fade f1">Mentoring · Automation · Sydney</p>
+        <h1 id="headline">I help professionals and small businesses get <mark class="hl">real work</mark> done with AI.</h1>
+        <p class="sub fade f2">1:1 mentoring if you want to learn it yourself. Automation if you'd rather hand it over.</p>
+        <div class="btns fade f3">
+          <a class="btn btn-primary" href="https://calendar.app.google/dsVD6WTYH7Evp2jt5" target="_blank" rel="noopener">Book a free intro call<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+          <a class="btn btn-ghost" href="mailto:jerry@jerryralhan.com">Email me</a>
+        </div>
+      </div>
+
+      <div class="stage" aria-hidden="true">
+        <div class="window">
+          <div class="win-bar"><span></span><span></span><span></span></div>
+          <div class="convo" id="convo">
+            <div class="ex live" id="live">
+              <div class="pbox"><span class="q" id="q">What do mentees work on?</span><span class="caret off" id="caret"></span>
+                <span class="send" id="send"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V3M3.5 7.5L8 3l4.5 4.5"/></svg></span>
+              </div>
+              <div class="reply" id="reply">
+                <div class="avatar"><img src="assets/jerry.png" alt=""></div>
+                <div>
+                  <div class="dots" id="dots"><i></i><i></i><i></i></div>
+                  <div class="answer" id="answer"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="progress" id="progress"><i class="on"></i><i></i><i></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Reviews: a row of cards sliding sideways -->
+  <section class="reviews" id="testimonials" aria-label="Reviews" data-reveal>
+    <div class="marquee" tabindex="0" role="region" aria-label="Reviews from mentees. Hover, tap or focus to pause">
+      <div class="track" id="track">
+          <figure class="quote"><blockquote>Did a few sessions with Jerry to level up on Claude Code, and he delivered.</blockquote><figcaption><span class="ini" aria-hidden="true">T</span><b>Thomas</b><span>via MentorCruise</span></figcaption></figure>
+          <figure class="quote"><blockquote>We've only had a few sessions, but out of the 20+ coaches i've had, I think Jerry may end up being the best.</blockquote><figcaption><span class="ini" aria-hidden="true">A</span><b>Austin</b><span>via MentorCruise</span></figcaption></figure>
+          <figure class="quote"><blockquote>If you're feeling overwhelmed by AI or spinning your wheels, he'll help you find solid ground fast.</blockquote><figcaption><span class="ini" aria-hidden="true">L</span><b>Lisa</b><span>via MentorCruise</span></figcaption></figure>
+          <figure class="quote"><blockquote>He doesn't just teach concepts, he helps you figure out how to actually apply them to your specific vision.</blockquote><figcaption><span class="ini" aria-hidden="true">A</span><b>Alen</b><span>via MentorCruise</span></figcaption></figure>
+          <figure class="quote"><blockquote>Jerry is awesome. he is very knowledgable on the technical side but also does a good job breaking things down and explaining them in a way i understand.</blockquote><figcaption><span class="ini" aria-hidden="true">B</span><b>Brad</b><span>via MentorCruise</span></figcaption></figure>
+          <figure class="quote"><blockquote>He helped me identify clear next steps in my work and gave me the tools and guidance I needed to significantly boost my productivity.</blockquote><figcaption><span class="ini" aria-hidden="true">J</span><b>Joshua</b><span>via MentorCruise</span></figcaption></figure>
+          <figure class="quote"><blockquote>His suggestions, and how to implement these strategies, have already made a noticeable difference.</blockquote><figcaption><span class="ini" aria-hidden="true">A</span><b>Adolph</b><span>via MentorCruise</span></figcaption></figure>
+          <figure class="quote"><blockquote>He is patient and structured in a way that makes it easier for me to progress in an effective and fast way.</blockquote><figcaption><span class="ini" aria-hidden="true">A</span><b>Aya</b><span>via MentorCruise</span></figcaption></figure>
+          <figure class="quote"><blockquote>I highly recommend Jerry, and will be back for more mentorship in the future!</blockquote><figcaption><span class="ini" aria-hidden="true">O</span><b>Ody</b><span>via MentorCruise</span></figcaption></figure>
+          <figure class="quote"><blockquote>His guidance has given me greater confidence in my background and a clearer understanding of how to present my skills and experience as I pursue new career opportunities.</blockquote><figcaption><span class="ini" aria-hidden="true">C</span><b>Chelsea</b><span>via MentorCruise</span></figcaption></figure>
+          <figure class="quote"><blockquote>Jerry helped me in implementing AI for my personal use case and assisted me in job application process.</blockquote><figcaption><span class="ini" aria-hidden="true">R</span><b>Ramanah</b><span>via MentorCruise</span></figcaption></figure>
+          <figure class="quote"><blockquote>Great mentor.</blockquote><figcaption><span class="ini" aria-hidden="true">A</span><b>Abu Bakarr</b><span>via MentorCruise</span></figcaption></figure>
+      </div>
+    </div>
+    <div class="wrap reviews-foot"><span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"/></svg></span><a href="https://mentorcruise.com/mentor/jerryralhan/" target="_blank" rel="noopener">Read every review on MentorCruise<span class="sr-only"> (opens in a new tab)</span></a></div>
+  </section>
+
+  <!-- 3. Two offers -->
+  <section class="block" id="services" aria-labelledby="services-h">
+    <div class="wrap">
+      <h2 class="h2" id="services-h" data-reveal>Two ways to work together</h2>
+      <div class="offers">
+        <article class="offer" data-reveal>
+          <p class="name">Mentoring <span class="offer-num" aria-hidden="true">01</span></p>
+          <p class="label">Learn it yourself</p>
+          <h3>Get good at AI for the work you actually do.</h3>
+          <p class="lead">From everyday prompts to building your own automations.</p>
+          <ul>
+            <li>For anyone who wants to learn it themselves, professional or business owner</li>
+            <li>We agree what success looks like for you, in writing, before we start</li>
+            <li>Homework built on your real work, and you keep everything you build</li>
+            <li>Regular 1:1 calls, plus messages in between</li>
+            <li>Works inside strict privacy or IT rules, using the tools you're allowed to use</li>
+          </ul>
+        </article>
+        <article class="offer" data-reveal style="--d:.12s">
+          <p class="name">Automation <span class="offer-num" aria-hidden="true">02</span></p>
+          <p class="label">Hand it over</p>
+          <h3>Hand the repeat work to AI.</h3>
+          <p class="lead">I find the repeat work in your business and build AI tools that do it for you.</p>
+          <ul>
+            <li>For businesses that want the work taken off their hands</li>
+            <li>We map the job together and agree the scope and deliverables in writing before I build</li>
+            <li>Built and tested on your real work, and you own everything I build</li>
+            <li>Regular check-ins while I build, plus a walkthrough when I hand it over</li>
+            <li>Connects to the tools you already run on</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. How it works -->
+  <section class="block" id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <h2 class="h2" id="how-h" data-reveal>How it works</h2>
+      <div class="steps-box" id="steps">
+        <svg id="stepsSvg" aria-hidden="true" focusable="false"><path class="path-base"/><path class="path-draw"/></svg>
+        <ol class="steps">
+          <li class="step" data-reveal><span class="node" aria-hidden="true">1</span><h3>Intro call.</h3><p>30 minutes, free. Tell me where you're stuck and what you want.</p></li>
+          <li class="step" data-reveal style="--d:.1s"><span class="node" aria-hidden="true">2</span><h3>A plan.</h3><p>I write up what we'll do and in what order.</p></li>
+          <li class="step" data-reveal style="--d:.2s"><span class="node" aria-hidden="true">3</span><h3>We get to work.</h3><p>Calls and homework for mentoring. A build for automation.</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. About -->
+  <section class="block" id="about" aria-labelledby="about-h">
+    <div class="wrap about">
+      <div class="portrait" data-reveal>
+        <span class="disc" aria-hidden="true"></span><span class="ring" aria-hidden="true"></span>
+        <img src="assets/jerry.png" alt="Jerry Ralhan, smiling, in a black t-shirt" width="500" height="500" loading="lazy">
+      </div>
+      <div data-reveal style="--d:.12s">
+        <h2 class="h2" id="about-h">Hi, I'm Jerry</h2>
+        <p>I studied Electrical Engineering at UNSW, and I've spent 10+ years in tech since. These days I lead commercial operations at a global tech company.</p>
+        <p>I build AI systems for my own work every day. I teach people to build their own, and I build them for businesses that would rather hand it over.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Final call -->
+  <div class="wrap">
+    <section class="final" aria-labelledby="final-h" data-reveal>
+      <div>
+        <h2 id="final-h">Want to talk it through?</h2>
+        <p>Book a free 30 minute intro call. We'll work out which one fits. No prep needed.</p>
+      </div>
+      <div class="btns">
+        <a class="btn btn-primary" href="https://calendar.app.google/dsVD6WTYH7Evp2jt5" target="_blank" rel="noopener">Book a free intro call<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+        <a class="btn btn-ghost" href="mailto:jerry@jerryralhan.com">Email me</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- 8. Footer -->
+<footer>
+  <div class="wrap">
+    <span class="fi">Jerry Ralhan</span><span class="sep" aria-hidden="true">·</span><span class="fi">Sydney, Australia</span><span class="sep" aria-hidden="true">·</span><span class="fi">ABN 51 937 729 511</span><span class="sep" aria-hidden="true">·</span><span class="fi"><a href="https://www.linkedin.com/in/jralhan/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></span><span class="sep" aria-hidden="true">·</span><span class="fi">© 2026</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Demo exchanges. Every answer is copy.md, verbatim. */
+  var EX = [
+    { q: "What do mentees work on?",
+      a: '<ul><li><span>Getting Claude to know your business, so it stops forgetting you every chat</span></li><li><span>Setting up Claude and Claude Code from zero, even if you\'ve never opened a terminal</span></li><li><span>A content plan that runs off your own numbers</span></li><li><span>Connecting AI to the tools you already run on, like your online store</span></li><li><span>A simple system for your week, so nothing slips</span></li></ul>' },
+    { q: "What could you automate for my business?",
+      a: '<ul><li><span>Following up every new enquiry within minutes, so leads don\'t go cold</span></li><li><span>Answering common booking questions by text, after hours</span></li><li><span>Pulling quotes, orders or invoices out of your inbox into one sheet</span></li><li><span>Turning sales call recordings into notes, scored against your best call</span></li><li><span>A morning summary of what needs doing today, pulled from the tools you already use</span></li></ul>' },
+    { q: "Which one is for me?",
+      a: '<p>If you want to learn it yourself, Mentoring. If you\'d rather hand it over, Automation.</p><p>Not sure? That\'s what the free intro call is for.</p>' }
+  ];
+
+  /* ---------- header border on scroll ---------- */
+  var top = document.getElementById('top');
+  function onScroll(){ top.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* ---------- hero headline: split into words ---------- */
+  var h1 = document.getElementById('headline');
+  if (!reduce) {
+    var walker = document.createTreeWalker(h1, NodeFilter.SHOW_TEXT), nodes = [], n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    var i = 0;
+    nodes.forEach(function(node){
+      var frag = document.createDocumentFragment();
+      node.textContent.split(/(\s+)/).forEach(function(part){
+        if (!part) return;
+        if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+        var s = document.createElement('span'); s.className = 'wd'; s.textContent = part;
+        s.style.transitionDelay = (0.05 + i++ * 0.045) + 's'; frag.appendChild(s);
+      });
+      node.parentNode.replaceChild(frag, node);
+    });
+  }
+  var hero = document.getElementById('hero');
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ h1.classList.add('go'); hero.classList.add('go'); }); });
+
+  /* ---------- scroll reveals ---------- */
+  var revealEls = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
+
+  /* ---------- reviews: clone the cards so the slide loops without a gap ---------- */
+  var track = document.getElementById('track');
+  [].slice.call(track.children).forEach(function(c){ var k = c.cloneNode(true); k.setAttribute('aria-hidden','true'); track.appendChild(k); });
+
+  /* ---------- how it works: a looping path that draws as you scroll ---------- */
+  var TAU = Math.PI * 2;
+  var steps = document.getElementById('steps'), stepsSvg = document.getElementById('stepsSvg');
+  var base = stepsSvg.querySelector('.path-base'), draw = stepsSvg.querySelector('.path-draw');
+  var stepEls = steps.querySelectorAll('.step'), stepGeo = null;
+  function poly(pts){
+    var cum = [0], d = 'M' + pts[0][0].toFixed(1) + ' ' + pts[0][1].toFixed(1);
+    for (var i = 1; i < pts.length; i++){
+      var dx = pts[i][0] - pts[i-1][0], dy = pts[i][1] - pts[i-1][1];
+      cum.push(cum[i-1] + Math.sqrt(dx*dx + dy*dy));
+      d += 'L' + pts[i][0].toFixed(1) + ' ' + pts[i][1].toFixed(1);
+    }
+    return { cum: cum, L: cum[cum.length - 1], d: d };
+  }
+  /* layout position inside base, ignoring the reveal transforms */
+  function rel(node, base){
+    var x = 0, y = 0, n = node;
+    while (n && n !== base){ x += n.offsetLeft; y += n.offsetTop; n = n.offsetParent; }
+    if (n !== base){
+      var r = node.getBoundingClientRect(), b = base.getBoundingClientRect();
+      return { x: r.left - b.left, y: r.top - b.top, w: r.width, h: r.height };
+    }
+    return { x: x, y: y, w: node.offsetWidth, h: node.offsetHeight };
+  }
+  function measureSteps(){
+    var W = steps.clientWidth, H = steps.clientHeight;
+    stepsSvg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    var nodes = [].map.call(steps.querySelectorAll('.node'), function(n){ var r = rel(n, steps); return [r.x + r.w / 2, r.y + r.h / 2]; });
+    var vertical = Math.abs(nodes[1][0] - nodes[0][0]) < 10;
+    var pts = [], marks = [0];
+    for (var i = 0; i < nodes.length - 1; i++){
+      var a = nodes[i], b = nodes[i + 1];
+      var dx = b[0] - a[0], dy = b[1] - a[1], L = Math.sqrt(dx*dx + dy*dy);
+      var ux = dx / L, uy = dy / L, nx = uy, ny = -ux; /* perpendicular: up on desktop, right on mobile */
+      var bb = L * (vertical ? 0.2 : 0.25), k = vertical ? 0.32 : 0.5, M = 90;
+      for (var j = (i ? 1 : 0); j <= M; j++){
+        var tt = TAU * j / M;
+        var along = L * tt / TAU + bb * Math.sin(tt), off = -k * bb * (1 - Math.cos(tt));
+        if (vertical) off = Math.max(off, -k * bb * 2);
+        pts.push([a[0] + ux * along - nx * off, a[1] + uy * along - ny * off]);
+      }
+      marks.push(pts.length - 1);
+    }
+    var p = poly(pts);
+    base.setAttribute('d', p.d); draw.setAttribute('d', p.d);
+    draw.setAttribute('stroke-dasharray', p.L + ' ' + (p.L + 10));
+    stepGeo = { L: p.L, marks: marks.map(function(m){ return p.cum[m]; }) };
+  }
+  function drawSteps(){
+    if (!stepGeo) return;
+    var r = steps.getBoundingClientRect(), vh = window.innerHeight;
+    var prog = reduce ? 1 : Math.max(0, Math.min(1, (vh * 0.78 - r.top) / (r.height * 0.95)));
+    var len = stepGeo.L * prog;
+    draw.setAttribute('stroke-dashoffset', (stepGeo.L - len).toFixed(1));
+    for (var i = 0; i < stepEls.length; i++) stepEls[i].classList.toggle('on', len >= stepGeo.marks[i] - 2 && prog > 0.02);
+  }
+  var stepsTick = false, stepsRt;
+  window.addEventListener('scroll', function(){
+    if (stepsTick) return; stepsTick = true;
+    requestAnimationFrame(function(){ stepsTick = false; drawSteps(); });
+  }, {passive:true});
+  window.addEventListener('resize', function(){ clearTimeout(stepsRt); stepsRt = setTimeout(function(){ measureSteps(); drawSteps(); }, 120); });
+  measureSteps(); drawSteps();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ measureSteps(); drawSteps(); });
+
+  /* ---------- live prompt ---------- */
+  var convo = document.getElementById('convo'), live = document.getElementById('live');
+  var qEl = document.getElementById('q'), caret = document.getElementById('caret'), send = document.getElementById('send');
+  var reply = document.getElementById('reply'), answer = document.getElementById('answer'), dots = document.getElementById('dots');
+  var bars = document.querySelectorAll('#progress i');
+
+  /* Ghost copies of every finished exchange, stacked in one grid cell,
+     reserve the tallest height so nothing below ever jumps. */
+  EX.forEach(function(ex){
+    var g = live.cloneNode(true);
+    g.className = 'ex ghost'; g.removeAttribute('id');
+    g.querySelectorAll('[id]').forEach(function(el){ el.removeAttribute('id'); });
+    g.querySelector('.q').textContent = ex.q;
+    g.querySelector('.answer').innerHTML = ex.a;
+    convo.insertBefore(g, live);
+  });
+
+  function setBars(k){ bars.forEach(function(b, j){ b.classList.toggle('on', j <= k); }); }
+
+  function wrapWords(root){
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), list = [], t;
+    while ((t = w.nextNode())) list.push(t);
+    var spans = [];
+    list.forEach(function(node){
+      var frag = document.createDocumentFragment();
+      node.textContent.split(/(\s+)/).forEach(function(part){
+        if (!part) return;
+        if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+        var s = document.createElement('span'); s.className = 'w'; s.textContent = part;
+        frag.appendChild(s); spans.push(s);
+      });
+      node.parentNode.replaceChild(frag, node);
+    });
+    root.querySelectorAll('.stars').forEach(function(st){ st.classList.add('w'); spans.unshift(st); });
+    return spans;
+  }
+
+  function showStatic(k){
+    qEl.textContent = EX[k].q; answer.innerHTML = EX[k].a;
+    caret.classList.add('off'); setBars(k);
+  }
+
+  if (reduce) { showStatic(0); return; }
+
+  /* pause when the hero is off screen or the tab is hidden */
+  var visible = true, tabOn = !document.hidden;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(e){ visible = e[0].isIntersecting; }, {threshold:0.05}).observe(live);
+  }
+  document.addEventListener('visibilitychange', function(){ tabOn = !document.hidden; });
+  function wait(ms){
+    return new Promise(function(res){
+      var left = ms, last = performance.now();
+      (function tick(){
+        var now = performance.now();
+        if (visible && tabOn) left -= (now - last);
+        last = now;
+        if (left <= 0) res(); else setTimeout(tick, Math.min(left, 60));
+      })();
+    });
+  }
+
+  async function play(k){
+    var ex = EX[k];
+    setBars(k);
+    answer.innerHTML = ''; reply.classList.add('pre'); reply.classList.remove('hide');
+    send.classList.remove('ready');
+    caret.classList.remove('off');
+    qEl.textContent = '';
+    await wait(500);
+    for (var c = 0; c < ex.q.length; c++) {
+      qEl.textContent += ex.q[c];
+      var ch = ex.q[c];
+      await wait(ch === ' ' ? 90 : 48 + Math.random() * 55);
+    }
+    send.classList.add('ready');
+    await wait(450);
+    send.classList.add('fire'); await wait(160); send.classList.remove('fire');
+    caret.classList.add('off');
+    reply.classList.remove('pre');
+    dots.classList.add('on');
+    await wait(900);
+    dots.classList.remove('on');
+    answer.innerHTML = ex.a;
+    var spans = wrapWords(answer);
+    var idx = 0;
+    while (idx < spans.length) {
+      var chunk = 1 + Math.floor(Math.random() * 3);
+      for (var j = 0; j < chunk && idx < spans.length; j++) spans[idx++].classList.add('on');
+      await wait(45 + Math.random() * 45);
+    }
+    await wait(5200);
+    reply.classList.add('hide');
+    await wait(350);
+    caret.classList.remove('off'); send.classList.remove('ready');
+    while (qEl.textContent.length) { qEl.textContent = qEl.textContent.slice(0, -1); await wait(18); }
+  }
+
+  (async function loop(){
+    qEl.textContent = '';
+    await wait(900);
+    var k = 0;
+    for (;;) { await play(k); k = (k + 1) % EX.length; }
+  })();
+})();
+</script>
+</body>
+</html>
